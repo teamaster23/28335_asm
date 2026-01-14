@@ -22,7 +22,7 @@ unsigned int Flash28335_Verify(unsigned char *flash_addr,
     unsigned int init_result;
     
     // 调用初始化函数
-    init_result = Fl28335_Init();
+    init_result = Fl28335_Init(error);
     if (init_result != 0) {
         return init_result;  // 初始化失败，返回错误码
     }
