@@ -1,5 +1,7 @@
 void Fl28x_WatchDogDisable(void)
 {
+    // 起始地址：0x009579
+
     asm("EALLOW");
     
     // 读取看门狗控制寄存器
