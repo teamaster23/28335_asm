@@ -4,7 +4,7 @@
 00009002   a044       MOVL         *-SP[4], XAR5
 00009003   a842       MOVL         *-SP[2], XAR4
 00009004   8a56       MOVL         XAR4, *-SP[22]
-00009005   7640       LCR          0x00953b //执行flash_init操作
+00009005   7640       LCR          0x00953b //调用Flash_init_test
 00009006   953b
 00009007   964d       MOV          *-SP[13], AL
 00009008   5200       CMPB         AL, #0x0
@@ -60,7 +60,7 @@
 00009037   9a0c       MOVB         AL, #0xc
 00009038   6f70       SB           112, UNC
 009039:              $C$L4:
-00009039   7640       LCR          0x0091f1 // 调用EnterCmdMode
+00009039   7640       LCR          0x0091f1 // 调用EnterCmdMode_test
 0000903a   91f1
 0000903b   7622       EALLOW       
 0000903c   9a03       MOVB         AL, #0x3
@@ -77,7 +77,7 @@
 00009045   5c4e       MOVZ         AR4, *-SP[14]
 00009046   064a       MOVL         ACC, *-SP[10]
 00009047   ff69       SPM          #0
-00009048   7640       LCR          0x009268 // 调用ProgVerify
+00009048   7640       LCR          0x009268 // 调用ProgVerify_test
 00009049   9268
 0000904a   964b       MOV          *-SP[11], AL
 0000904b   2b51       MOV          *-SP[17], #0
@@ -96,7 +96,7 @@
 009055:              $C$DW$L$_Flash28335_Program$13$E:
 009055:              $C$DW$L$_Flash28335_Program$14$B:
 00009055   c500       MOVL         XAR7, @0x0
-00009056   3e67       LCR          *XAR7  //
+00009056   3e67       LCR          *XAR7  // 此步骤暂无意义
 009057:              $C$DW$L$_Flash28335_Program$14$E:
 009057:              $C$L7:
 009057:              $C$DW$L$_Flash28335_Program$15$B:
@@ -124,11 +124,11 @@
 00009068   5d4e       MOVZ         AR5, *-SP[14]
 00009069   5c4c       MOVZ         AR4, *-SP[12]
 0000906a   064a       MOVL         ACC, *-SP[10]
-0000906b   7640       LCR          0x0092a6 // 调用ProgPulse
+0000906b   7640       LCR          0x0092a6 // 调用ProgPulse_test
 0000906c   92a6
 0000906d   5c4e       MOVZ         AR4, *-SP[14]
 0000906e   064a       MOVL         ACC, *-SP[10]
-0000906f   7640       LCR          0x009268 // 调用ProgVerify
+0000906f   7640       LCR          0x009268 // 调用ProgVerify_test
 00009070   9268
 00009071   964b       MOV          *-SP[11], AL
 00009072   0a51       INC          *-SP[17]
@@ -187,7 +187,7 @@
 0090a0:              $C$DW$L$_Flash28335_Program$22$E:
 0090a0:              $C$L11:
 000090a0   ff69       SPM          #0
-000090a1   7640       LCR          0x0091e4 // 调用LeaveCmdMode
+000090a1   7640       LCR          0x0091e4 // 调用LeaveCmdMode_test
 000090a2   91e4
 000090a3   1b4d       CMP          *-SP[13], #999
 000090a4   03e7

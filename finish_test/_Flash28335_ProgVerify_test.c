@@ -1,11 +1,14 @@
 #include <stdint.h>
 #include "_Flash28335_DisableNMI_test.h"
-#include "_Flash28335_DisableInt_test.h"
 #include "_Flash28335_OpenPulse_test.h"
 #include "_Flash28335_Delay_test.h"
-#include "_Flash28335_RestoreInt_test.h"
 #include "_Flash28335_ClosePulse_test.h"
 #include "_Flash28335_ProgVerify_test.h"
+
+
+
+extern uint16_t DSP28x_DisableInt(void);
+extern void DSP28x_RestoreInt(uint16_t Stat0);
 
 /**
  * @brief Flash编程验证函数
@@ -23,7 +26,7 @@ uint16_t Fl28x_ProgVerify_test(uint16_t sector, uint32_t addr)
     
     // ========== 第1步：保护现场 ==========
     nmi_status = Fl28x_DisableNMI_test();    // 禁用NMI
-    int_status = Fl28x_DisableInt_test();    // 禁用中断
+    int_status = DSP28x_DisableInt();    // 禁用中断
     
     // ========== 第2步：打开Flash泵 ==========
     pulse_result = Fl28x_OpenPulse_test(addr);
@@ -62,7 +65,7 @@ uint16_t Fl28x_ProgVerify_test(uint16_t sector, uint32_t addr)
     Fl28x_ClosePulse_test();
     
     // ========== 第8步：恢复现场 ==========
-    Fl28x_RestoreInt_test(int_status);           // 恢复中断状态
+    DSP28x_RestoreInt(int_status);           // 恢复中断状态
     *(volatile uint16_t *)0x7077 = nmi_status;  // 恢复NMI状态
     
     // ========== 第9步：返回读取的数据 ==========

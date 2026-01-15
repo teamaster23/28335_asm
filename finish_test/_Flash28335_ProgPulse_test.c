@@ -1,12 +1,14 @@
 #include <stdint.h>
 #include "_Flash28335_DisableNMI_test.h"
-#include "_Flash28335_DisableInt_test.h"
 #include "_Flash28335_OpenPulse_test.h"
 #include "_Flash28335_MaskAll_test.h"
 #include "_Flash28335_Delay_test.h"
 #include "_Flash28335_ClosePulse_test.h"
-#include "_Flash28335_RestoreInt_test.h"
 #include "_Flash28335_ProgPulse_test.h"
+
+
+extern uint16_t DSP28x_DisableInt(void);
+extern void DSP28x_RestoreInt(uint16_t Stat0);
 
 /**
  * @brief F28335 Flash编程脉冲函数
@@ -23,7 +25,7 @@ void Fl28x_ProgPulse_test(uint32_t acc, uint16_t ar4, uint16_t ar5)
     
     // 步骤1: 禁用NMI和中断，保存状态
     nmi_status = Fl28x_DisableNMI_test();
-    int_status = Fl28x_DisableInt_test();
+    int_status = DSP28x_DisableInt();
     
     // 步骤2: 打开编程脉冲
     pulse_status = Fl28x_OpenPulse_test(acc);
@@ -68,7 +70,7 @@ void Fl28x_ProgPulse_test(uint32_t acc, uint16_t ar4, uint16_t ar5)
     Fl28x_ClosePulse_test();
     
     // 步骤9: 恢复中断状态
-    Fl28x_RestoreInt_test(int_status);
+    DSP28x_RestoreInt(int_status);
     
     // 步骤10: 恢复NMI寄存器 (写入0x7077)
     *((volatile uint16_t *)0x7077) = nmi_status;
