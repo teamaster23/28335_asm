@@ -1,13 +1,15 @@
 #include <stdint.h>
 #include "_Flash28335_ClosePulse_test.h"
+#include "../Flash2833x_API_Library.h"
+
 
 void Fl28x_ClosePulse_test(void)
 {
-    // èµ·å§‹åœ°å€ï¼š00009246
+    // ÆğÊ¼µØÖ·£º00009246
     
-    asm("EALLOW");  // ä½¿èƒ½å¯¹å—ä¿æŠ¤å¯„å­˜å™¨çš„å†™è®¿é—®
+    asm("EALLOW");  // Ê¹ÄÜ¶ÔÊÜ±£»¤¼Ä´æÆ÷µÄĞ´·ÃÎÊ
     
-    // é…ç½®ä¸€ç³»åˆ—å¯„å­˜å™¨
+    // ÅäÖÃÒ»ÏµÁĞ¼Ä´æÆ÷
     *(volatile uint8_t *)0x0a91 = 0x0;
     *(volatile uint16_t *)0x0a90 = 0x0a0f;
     *(volatile uint16_t *)0x0a89 = 0x0;
@@ -15,10 +17,10 @@ void Fl28x_ClosePulse_test(void)
     *(volatile uint16_t *)0x0a8b = 0x0;
     *(volatile uint16_t *)0x0a8c = 0x0;
     
-    // è°ƒç”¨å»¶è¿Ÿå‡½æ•°
+    // µ÷ÓÃÑÓ³Ùº¯Êı
     Fl28x_Delay_test(6553);  // 0x1999 = 6553
     
-    asm("EDIS");   // ç¦æ­¢å¯¹å—ä¿æŠ¤å¯„å­˜å™¨çš„å†™è®¿é—®
+    asm("EDIS");   // ½ûÖ¹¶ÔÊÜ±£»¤¼Ä´æÆ÷µÄĞ´·ÃÎÊ
     
     return;
 }

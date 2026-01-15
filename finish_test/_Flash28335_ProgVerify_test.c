@@ -1,9 +1,9 @@
 #include <stdint.h>
-#include "_Flash28335_DisableNMI.h"
-#include "_Flash28335_DisableInt.h"
+#include "_Flash28335_DisableNMI_test.h"
+#include "_Flash28335_DisableInt_test.h"
 #include "_Flash28335_OpenPulse_test.h"
 #include "_Flash28335_Delay_test.h"
-#include "_Flash28335_RestoreInt.h"
+#include "_Flash28335_RestoreInt_test.h"
 
 /**
  * @brief Flash编程验证函数

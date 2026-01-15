@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "_Flash28335_RestoreInt.h"
+#include "_Flash28335_RestoreInt_test.h"
 
 /* 等价于：
  * _Fl28x_RestoreInt:
@@ -13,9 +13,8 @@
  */
 void Fl28x_RestoreInt_test(uint16_t key)
 {
-    /* 确保 AL = key（避免编译器没把参数放在 AL） */
-    asm(" MOV AL, %0" : : "r"(key));
-
-    asm(" MOV  *SP++, AL");
-    asm(" POP  ST1");
+    asm(" MOVL  XAR4, #_key");     // 加载key的地址到XAR4
+    asm(" MOV   AL, *XAR4");       // 从内存加载key到AL
+    asm(" MOV   *SP++, AL");       // 将AL压入栈
+    asm(" POP   ST1");             // 恢复ST1
 }

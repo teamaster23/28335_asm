@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "_Flash28335_MaskAll.h"
+#include "_Flash28335_MaskAll_test.h"
 
 void Fl28x_MaskAll_test(void)
 {

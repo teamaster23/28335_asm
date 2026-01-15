@@ -1,7 +1,7 @@
 #include <stdint.h>
-#include "_Flash28335_DisableNMI.h"
+#include "_Flash28335_DisableNMI_test.h"
 
-uint16_t Fl28x_DisableNMI(void)
+uint16_t Fl28x_DisableNMI_test(void)
 {
     uint16_t temp;
     

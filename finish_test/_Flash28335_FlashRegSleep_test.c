@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include "_Flash28335_FlashRegSleep_test.h"
+#include "../Flash2833x_API_Library.h"
 
 static inline void wr8(uint16_t addr, uint8_t v)
 {

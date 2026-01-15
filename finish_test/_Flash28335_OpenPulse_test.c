@@ -1,8 +1,6 @@
 #include <stdint.h>
 #include "_Flash28335_OpenPulse_test.h"
 
-
-
 uint16_t Fl28x_OpenPulse_test(uint32_t acc)
 {
     asm(" EALLOW");
