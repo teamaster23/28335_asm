@@ -1,12 +1,12 @@
 #include <stdint.h>
-
+#include "_Flash28335_DisableInt_test.h"
 /* 等价于：
  * PUSH ST1
  * SETC INTM|DBGM
  * MOV  AL, *--SP
  * LRETR
  */
-uint16_t Fl28x_DisableInt(void)
+uint16_t Fl28x_DisableInt_test(void)
 {
     
     uint16_t key;
