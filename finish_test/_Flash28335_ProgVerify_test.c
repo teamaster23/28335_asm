@@ -4,6 +4,8 @@
 #include "_Flash28335_OpenPulse_test.h"
 #include "_Flash28335_Delay_test.h"
 #include "_Flash28335_RestoreInt_test.h"
+#include "_Flash28335_ClosePulse_test.h"
+#include "_Flash28335_ProgVerify_test.h"
 
 /**
  * @brief Flash编程验证函数
@@ -20,8 +22,8 @@ uint16_t Fl28x_ProgVerify_test(uint16_t sector, uint32_t addr)
     volatile uint16_t *flash_data_base = (volatile uint16_t *)0x0a9c;
     
     // ========== 第1步：保护现场 ==========
-    nmi_status = Fl28x_DisableNMI();    // 禁用NMI
-    int_status = Fl28x_DisableInt();    // 禁用中断
+    nmi_status = Fl28x_DisableNMI_test();    // 禁用NMI
+    int_status = Fl28x_DisableInt_test();    // 禁用中断
     
     // ========== 第2步：打开Flash泵 ==========
     pulse_result = Fl28x_OpenPulse_test(addr);
@@ -57,7 +59,7 @@ uint16_t Fl28x_ProgVerify_test(uint16_t sector, uint32_t addr)
     Fl28x_Delay_test(0x10000);  // ACC = 0x00010000 = 65536
     
     // ========== 第7步：关闭Flash泵 ==========
-    _Fl28x_ClosePulse();  // 调用0x9246
+    Fl28x_ClosePulse_test();
     
     // ========== 第8步：恢复现场 ==========
     Fl28x_RestoreInt_test(int_status);           // 恢复中断状态
