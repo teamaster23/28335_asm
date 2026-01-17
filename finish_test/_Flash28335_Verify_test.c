@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "_Flash28335_Verify.h"
+#include "_Flash28335_Verify_test.h"
 #include "_Flash28335_init_test.h"
 
 #ifndef Flash_ST_test
@@ -11,23 +11,23 @@ typedef struct {
 } FLASH_ST;
 #endif
 
-uint16_t _Flash28335_Verify(uint16_t* source, uint16_t* flash, uint32_t length, Flash_ST* error)
+Uint16 _Flash28335_Verify_test(Uint16* source, Uint16* flash, Uint32 length, FLASH_ST* error)
 {
-    uint16_t status;
-    uint32_t i;
-    void (*callback)(void);
+    Uint16 status_2;
+    Uint32 i;
     
     // 调用初始化函数 (0x953b)
-    status = Fl28335_Init_test();
+    status_2 = Fl28335_Init_test(error);
     
     // 如果初始化失败，返回错误状态
-    if (status != 0) {
-        return status;
+    if (status_2 != 0) {
+        return status_2;
     }
+    
     
     // 如果长度为0，返回错误
     if (length == 0) {
-        return 0x28;  // 错误码
+        return 0x28;  // 
     }
     
     // // 检查是否有回调函数 (地址 0x300)
@@ -37,13 +37,14 @@ uint16_t _Flash28335_Verify(uint16_t* source, uint16_t* flash, uint32_t length, 
     // }
     
     // 逐字节比较
-    for (int i=1; i <= length; i++)
+    for (i=1; i <= length; i++)
+    {
         if (*source != *flash) {
             // 验证失败，记录错误信息
-            error->FirstFailAddr = (uint32_t)flash;
+            error->FirstFailAddr = (Uint32)flash;
             error->ExpectedData = *source;
             error->ActualData = *flash;
-            return 0x28;  // 验证失败错误码
+            return 0x28;   // 验证失败错误码
         }
         
         source++;
@@ -51,5 +52,5 @@ uint16_t _Flash28335_Verify(uint16_t* source, uint16_t* flash, uint32_t length, 
     }
     
     // 验证成功
-    return status;
+    return status_2;
 }

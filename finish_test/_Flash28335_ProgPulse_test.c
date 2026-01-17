@@ -1,14 +1,18 @@
 #include <stdint.h>
 #include "_Flash28335_DisableNMI_test.h"
-#include "_Flash28335_OpenPulse_test.h"
+//#include "_Flash28335_OpenPulse_test.h"
 #include "_Flash28335_MaskAll_test.h"
-#include "_Flash28335_Delay_test.h"
-#include "_Flash28335_ClosePulse_test.h"
+//#include "_Flash28335_ClosePulse_test.h"
 #include "_Flash28335_ProgPulse_test.h"
 
 
+extern void Fl28x_ClosePulse_test(void);
+extern unsigned int Fl28x_OpenPulse_test(unsigned int param);
+extern void Fl28x_WatchDogDisable_test();
+extern void Fl28x_Delay_test();
 extern uint16_t DSP28x_DisableInt(void);
 extern void DSP28x_RestoreInt(uint16_t Stat0);
+
 
 /**
  * @brief F28335 Flash编程脉冲函数
@@ -28,7 +32,7 @@ void Fl28x_ProgPulse_test(uint32_t acc, uint16_t ar4, uint16_t ar5)
     int_status = DSP28x_DisableInt();
     
     // 步骤2: 打开编程脉冲
-    pulse_status = Fl28x_OpenPulse_test(acc);
+    Fl28x_OpenPulse_test(acc);
     
     // 步骤3: 屏蔽所有中断
     Fl28x_MaskAll_test();

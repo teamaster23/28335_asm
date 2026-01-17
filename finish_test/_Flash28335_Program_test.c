@@ -1,9 +1,11 @@
 #include <stdint.h>
 #include "_Flash28335_init_test.h"
-#include "_Flash28335_EnterCmdMode_test.h"
+//#include "_Flash28335_EnterCmdMode_test.h"
 #include "_Flash28335_LeaveCmdMode_test.h"
 #include "_Flash28335_ProgVerify_test.h"
 #include "_Flash28335_ProgPulse_test.h"
+
+extern void Fl28x_EnterCmdMode_test(void);
 
 Uint16 Flash28335_Program_test(Uint16 *pBuffer, Uint32 Address, Uint32 Length, FLASH_ST *pStatus)
 {
