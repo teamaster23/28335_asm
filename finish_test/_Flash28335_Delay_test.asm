@@ -25,19 +25,19 @@
     .sect ".text"
 
 _Fl28x_Delay_test:
-    MOVW    DP, #0x300           ; ÉèÖÃÊý¾ÝÒ³¼Ä´æÆ÷ DP = 0x300
-    MOVL    XT, ACC              ; ½« XT ¼Ä´æÆ÷Öµ¼ÓÔØµ½ ACC
-    QMPYL   ACC, XT, @0x2        ; ³Ë·¨£ºACC = ACC * [0x2]£¨ÑÓÊ±»ùÊý£©
-    SUBB    ACC, #52             ; ´Ó ACC ÖÐ¼õÈ¥ 52
-    BF      _Fl28x_DelayLoop_test, LT ; Èç¹û ACC < 0 Ìø×ªµ½ DelayLoop
-    SFR     ACC, 4               ; ½« ACC Öµ´æ´¢µ½ÌØÊâ¼Ä´æÆ÷ 4
+    MOVW    DP, #0x300           ; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½Ä´ï¿½ï¿½ï¿½ DP = 0x300
+    MOVL    XT, ACC              ; ï¿½ï¿½ XT ï¿½Ä´ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Øµï¿½ ACC
+    QMPYL   ACC, XT, @0x2        ; ï¿½Ë·ï¿½ï¿½ï¿½ACC = ACC * [0x2]ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    SUBB    ACC, #52             ; ï¿½ï¿½ ACC ï¿½Ð¼ï¿½È¥ 52
+    BF      6, LT ; ï¿½ï¿½ï¿½ ACC < 0 ï¿½ï¿½×ªï¿½ï¿½ DelayLoop
+    SFR     ACC, 4               ; ï¿½ï¿½ ACC Öµï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ 4
 
 _Fl28x_DelayLoop_test:
     SUBB    ACC, #1              ; ACC = ACC - 1
-    BF      _Fl28x_DelayLoop_test, GT ; Èç¹û ACC > 0£¬¼ÌÐøÑ­»·
+    BF      _Fl28x_DelayLoop_test, GT ; ï¿½ï¿½ï¿½ ACC > 0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½
 
 _Fl28x_DelayDone_test:
-    LRETR                        ; ·µ»Øµ½ C µ÷ÓÃº¯Êý
+    LRETR                        ; ï¿½ï¿½ï¿½Øµï¿½ C ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½
 
 ;//===========================================================================
 ;// End of file.
