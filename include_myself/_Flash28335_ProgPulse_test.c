@@ -1,13 +1,15 @@
 #include <stdint.h>
 #include "../Flash2833x_API_Library.h"
 #include "_Flash28335_ProgPulse_test.h"
+#include "_Flash28335_ClosePulse_test.h"
+#include "_Flash28335_DisableNMI_test.h"
 
-extern unsigned int Fl28x_DisableNMI_test(void);
+//extern unsigned int Fl28x_DisableNMI_test(void);
 extern unsigned int DSP28x_DisableInt(void);
 extern unsigned int Fl28x_OpenPulse_test(unsigned long addr);
 extern void Fl28x_MaskAll_test(void);
 extern void Fl28x_Delay_test(unsigned long delay);
-extern void Fl28x_ClosePulse_test(void);
+//extern void Fl28x_ClosePulse_test(void);
 extern void DSP28x_RestoreInt(unsigned int intStatus);
 
 // Hardware register addresses

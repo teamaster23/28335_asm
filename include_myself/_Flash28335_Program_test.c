@@ -7,6 +7,7 @@
 #include "_Flash28335_Program_test.h"
 #include "_Flash28335_ProgVerify_test.h"
 #include "_Flash28335_ProgPulse_test.h"
+//#include "_Flash28335_LeaveCmdMode_test.h"
 
 // 外部函数声明
 //extern Uint16 Fl28335_Init_test(FLASH_ST *FlashStatus);
