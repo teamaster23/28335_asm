@@ -3,7 +3,7 @@
 000090ab   a844       MOVL         *-SP[4], XAR4
 000090ac   9641       MOV          *-SP[1], AL
 000090ad   8a44       MOVL         XAR4, *-SP[4]
-000090ae   7640       LCR          0x00953b
+000090ae   7640       LCR          0x00953b   // 调用Fl28335_Init_test
 000090af   953b
 000090b0   9646       MOV          *-SP[6], AL
 000090b1   5200       CMPB         AL, #0x0
@@ -21,7 +21,7 @@
 000090bc   ffef       B            140, UNC
 000090bd   008c
 0090be:              $C$L2:
-000090be   7640       LCR          0x0091f1
+000090be   7640       LCR          0x0091f1 // 调用_Fl28x_EnterCmdMode_test
 000090bf   91f1
 000090c0   7622       EALLOW       
 000090c1   9a03       MOVB         AL, #0x3
@@ -42,7 +42,7 @@
 000090ce   ff69       SPM          #0
 000090cf   9a80       MOVB         AL, #0x80
 000090d0   8ac4       MOVL         XAR4, *+XAR4[0]
-000090d1   7640       LCR          0x0093bf
+000090d1   7640       LCR          0x0093bf // 调用_Fl28335_CompactSector_test
 000090d2   93bf
 000090d3   9646       MOV          *-SP[6], AL
 000090d4   5200       CMPB         AL, #0x0
@@ -88,7 +88,7 @@
 000090f4   8ac4       MOVL         XAR4, *+XAR4[0]
 000090f5   92c5       MOV          AL, *+XAR5[0]
 000090f6   8344       MOVL         XAR5, *-SP[4]
-000090f7   7640       LCR          0x0094de
+000090f7   7640       LCR          0x0094de // 调用_Fl28335_ClearSector_test
 000090f8   94de
 000090f9   9646       MOV          *-SP[6], AL
 000090fa   5200       CMPB         AL, #0x0
@@ -110,7 +110,7 @@
 00009108   8ac4       MOVL         XAR4, *+XAR4[0]
 00009109   92c5       MOV          AL, *+XAR5[0]
 0000910a   8344       MOVL         XAR5, *-SP[4]
-0000910b   7640       LCR          0x009365
+0000910b   7640       LCR          0x009365 // 调用_Fl28335_EraseSector_test
 0000910c   9365
 0000910d   9646       MOV          *-SP[6], AL
 00910e:              $C$DW$L$_Flash28335_Erase$13$E:
@@ -135,7 +135,7 @@
 0000911c   8ac4       MOVL         XAR4, *+XAR4[0]
 0000911d   92c5       MOV          AL, *+XAR5[0]
 0000911e   8344       MOVL         XAR5, *-SP[4]
-0000911f   7640       LCR          0x0093bf
+0000911f   7640       LCR          0x0093bf // 调用_Fl28335_CompactSector_test
 00009120   93bf
 00009121   9646       MOV          *-SP[6], AL
 00009122   6f12       SB           18, UNC
@@ -157,7 +157,7 @@
 0000912f   8ac4       MOVL         XAR4, *+XAR4[0]
 00009130   92c5       MOV          AL, *+XAR5[0]
 00009131   8344       MOVL         XAR5, *-SP[4]
-00009132   7640       LCR          0x0093bf
+00009132   7640       LCR          0x0093bf // 调用_Fl28335_CompactSector_test
 00009133   93bf
 009134:              $C$DW$L$_Flash28335_Erase$16$E:
 009134:              $C$L8:
@@ -184,7 +184,7 @@
 00009143   8a44       MOVL         XAR4, *-SP[4]
 00009144   1ec4       MOVL         *+XAR4[0], ACC
 009145:              $C$L10:
-00009145   7640       LCR          0x0091e4
+00009145   7640       LCR          0x0091e4 // 调用_Fl28x_LeaveCmdMode_test
 00009146   91e4
 00009147   9246       MOV          AL, *-SP[6]
 009148:              $C$L11:

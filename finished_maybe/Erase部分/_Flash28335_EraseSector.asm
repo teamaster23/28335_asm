@@ -40,7 +40,7 @@
 009387:              $C$DW$L$_Fl28335_EraseSector$6$B:
 00009387   0650       MOVL         ACC, *-SP[16]
 00009388   5c4d       MOVZ         AR4, *-SP[13]
-00009389   7640       LCR          0x00914a
+00009389   7640       LCR          0x00914a //调用_Fl28x_EraseVerify_test
 0000938a   914a
 0000938b   9647       MOV          *-SP[7], AL
 0000938c   be00       MOVB         XAR6, #0x00
@@ -52,7 +52,7 @@
 009392:              $C$DW$L$_Fl28335_EraseSector$6$E:
 009392:              $C$DW$L$_Fl28335_EraseSector$7$B:
 00009392   c500       MOVL         XAR7, @0x0
-00009393   3e67       LCR          *XAR7
+00009393   3e67       LCR          *XAR7 //无意义
 009394:              $C$DW$L$_Fl28335_EraseSector$7$E:
 009394:              $C$L4:
 009394:              $C$DW$L$_Fl28335_EraseSector$8$B:
@@ -71,7 +71,7 @@
 0000939c   0650       MOVL         ACC, *-SP[16]
 0000939d   5c48       MOVZ         AR4, *-SP[8]
 0000939e   5d4d       MOVZ         AR5, *-SP[13]
-0000939f   7640       LCR          0x009192
+0000939f   7640       LCR          0x009192 // 调用_Fl28x_ErasePulse_test
 000093a0   9192
 000093a1   0a4b       INC          *-SP[11]
 000093a2   0a4a       INC          *-SP[10]
@@ -103,7 +103,7 @@
 000093b2   66d5       SB           -43, HI
 0093b3:              $C$DW$L$_Fl28335_EraseSector$14$E:
 0093b3:              $C$L7:
-000093b3   7640       LCR          0x009246
+000093b3   7640       LCR          0x009246 // 调用_Fl28x_ClosePulse_test
 000093b4   9246
 000093b5   9243       MOV          AL, *-SP[3]
 000093b6   544c       CMP          AL, *-SP[12]

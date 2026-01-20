@@ -18,7 +18,7 @@
 0094ac:              L2:
 000094ac   5c4f       MOVZ         AR4, *-SP[15]
 000094ad   0642       MOVL         ACC, *-SP[2]
-000094ae   7640       LCR          0x009268
+000094ae   7640       LCR          0x009268 // 调用_Fl28x_ProgVerify_test
 000094af   9268
 000094b0   9647       MOV          *-SP[7], AL
 000094b1   761f       MOVW         DP, #0x300
@@ -28,7 +28,7 @@
 000094b5   0fa6       CMPL         ACC, XAR6
 000094b6   ec03       SBF          3, EQ
 000094b7   c500       MOVL         XAR7, @0x0
-000094b8   3e67       LCR          *XAR7
+000094b8   3e67       LCR          *XAR7 // 无意义
 0094b9:              L3:
 000094b9   9247       MOV          AL, *-SP[7]
 000094ba   ec0c       SBF          12, EQ
@@ -37,7 +37,7 @@
 000094bd   5c48       MOVZ         AR4, *-SP[8]
 000094be   5d4f       MOVZ         AR5, *-SP[15]
 000094bf   0642       MOVL         ACC, *-SP[2]
-000094c0   7640       LCR          0x0092a6
+000094c0   7640       LCR          0x0092a6 // 调用 _Fl28x_ProgPulse_test
 000094c1   92a6
 000094c2   0a4a       INC          *-SP[10]
 000094c3   924a       MOV          AL, *-SP[10]

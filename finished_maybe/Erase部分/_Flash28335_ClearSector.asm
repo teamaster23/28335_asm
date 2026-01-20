@@ -33,7 +33,7 @@
 000094fb   064c       MOVL         ACC, *-SP[12]
 000094fc   5d45       MOVZ         AR5, *-SP[5]
 000094fd   8a48       MOVL         XAR4, *-SP[8]
-000094fe   7640       LCR          0x00949d
+000094fe   7640       LCR          0x00949d // 调用_Fl28x_ClearLoop_test
 000094ff   949d
 00009500   56bf       MOVB         *-SP[1], #0x80, UNC
 00009501   8041
@@ -41,13 +41,13 @@
 00009503   0400
 00009504   8a48       MOVL         XAR4, *-SP[8]
 00009505   064c       MOVL         ACC, *-SP[12]
-00009506   7640       LCR          0x00949d
+00009506   7640       LCR          0x00949d // 调用_Fl28x_ClearLoop_test
 00009507   949d
 00009508   2b41       MOV          *-SP[1], #0
 00009509   5d45       MOVZ         AR5, *-SP[5]
 0000950a   8a48       MOVL         XAR4, *-SP[8]
 0000950b   064c       MOVL         ACC, *-SP[12]
-0000950c   7640       LCR          0x00949d
+0000950c   7640       LCR          0x00949d // 调用_Fl28x_ClearLoop_test
 0000950d   949d
 0000950e   9649       MOV          *-SP[9], AL
 00950f:              $C$L3:

@@ -43,7 +43,7 @@
 0093e1:              $C$DW$L$_Fl28335_CompactSector$7$B:
 000093e1   064e       MOVL         ACC, *-SP[14]
 000093e2   5c4f       MOVZ         AR4, *-SP[15]
-000093e3   7640       LCR          0x0092e8
+000093e3   7640       LCR          0x0092e8 // 调用_Fl28x_CompactVerify_test
 000093e4   92e8
 000093e5   9647       MOV          *-SP[7], AL
 000093e6   be00       MOVB         XAR6, #0x00
@@ -55,7 +55,7 @@
 0093ec:              $C$DW$L$_Fl28335_CompactSector$7$E:
 0093ec:              $C$DW$L$_Fl28335_CompactSector$8$B:
 000093ec   c500       MOVL         XAR7, @0x0
-000093ed   3e67       LCR          *XAR7
+000093ed   3e67       LCR          *XAR7 // 无意义
 0093ee:              $C$DW$L$_Fl28335_CompactSector$8$E:
 0093ee:              $C$L5:
 0093ee:              $C$DW$L$_Fl28335_CompactSector$9$B:
@@ -67,7 +67,7 @@
 000093f1   5d4f       MOVZ         AR5, *-SP[15]
 000093f2   5ca9       MOVZ         AR4, AL
 000093f3   064e       MOVL         ACC, *-SP[14]
-000093f4   7640       LCR          0x009322
+000093f4   7640       LCR          0x009322 //调用_Fl28x_CompactPulse_test
 000093f5   9322
 000093f6   6f07       SB           7, UNC
 0093f7:              $C$DW$L$_Fl28335_CompactSector$10$E:
